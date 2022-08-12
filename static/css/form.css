@@ -1,0 +1,211 @@
+/*リセットcss↓*/
+html {
+    overflow-y: scroll;
+  }
+  body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+    margin: 0;
+    padding: 0;
+  }
+  address,caption,cite,code,dfn,em,strong,th,var {
+    font-style: normal;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  caption,th {
+    text-align: left;
+  }
+  q:before,q:after {
+    content: '';
+  }
+  object,embed {
+    vertical-align: top;
+  }
+  hr,legend {
+    display: none;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+  }
+  img,abbr,acronym,fieldset {
+    border: 0;
+  }
+  li {
+    list-style-type: none;
+  }
+  sup {
+    vertical-align: super;
+    font-size: 0.5em;
+  }
+  img {
+    vertical-align: top;
+  }
+  i {
+    font-style: normal;
+  }
+  /*----リセットcss*----/
+  
+  /*デザインcss↓*/
+  .box_con04 {
+    max-width: 900px;
+    margin: 0  auto;
+  }
+  @media only screen and (max-width: 768px) {
+    .box_con04 {
+      width: 95%;
+    }
+  }
+  .box_con04 form {
+    width: 100%;
+  }
+  .box_con04 form ul {
+    width: 100%;
+  }
+  .box_con04 form ul li {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #1c2e53;
+    margin: .5em 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  @media only screen and (min-width: 769px) {
+    .box_con04 form ul li {
+      display: -webkit-flex;
+      display: flex;
+      -moz-border-radius: 30px;
+      -webkit-border-radius: 30px;
+      border-radius: 30px;
+    }
+  }
+  @media print {
+    .box_con04 form ul li {
+      display: -webkit-flex;
+      display: flex;
+      -moz-border-radius: 30px;
+      -webkit-border-radius: 30px;
+      border-radius: 30px;
+    }
+  }
+  .ie8 .box_con04 form ul li {
+    display: -webkit-flex;
+    display: flex;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+  }
+  .box_con04 form ul li .title {
+    position: relative;
+    width: 30%;
+    font-weight: normal;
+    padding: 1em;
+    position: relative;
+    color: #fff;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  @media only screen and (min-width: 769px) {
+    .box_con04 form ul li .title {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+  }
+  @media print {
+    .box_con04 form ul li .title {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+  }
+  .ie8 .box_con04 form ul li .title {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .box_con04 form ul li .title:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #1c2e53;
+    z-index: 0;
+  }
+  @media only screen and (max-width: 768px) {
+    .box_con04 form ul li .title {
+      text-align: center;
+      width: 100%;
+      display: block;
+      background: rgba(0, 0, 0, 0.2);
+      padding: .8em .2em;
+    }
+  }
+  .box_con04 form ul li .title em {
+    position: relative;
+    z-index: 1;
+  }
+  .box_con04 form ul li .title span {
+    background: #cd6f55;
+    padding: 0 .3em;
+    color: #fff;
+    margin-left: .5em;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .box_con04 form ul li .box_det {
+    width: 70%;
+    position: relative;
+    padding: 1em;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  @media only screen and (max-width: 768px) {
+    .box_con04 form ul li .box_det {
+      padding: 1.5em .5em;
+      display: block;
+      width: 100%;
+    }
+  }
+  .box_con04 form ul li .box_br {
+    display: block;
+  }
+  .box_con04 form ul li select, .box_con04 form ul li textarea, .box_con04 form ul li .wide {
+    width: 100%;
+    height: 3em;
+    padding: .5em;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .box_con04 form ul li textarea {
+    height: 10em;
+  }
+
+  .btn_submit {
+    position: relative;
+    display: block;
+    padding: 1em 2em 1em 1em;
+    width: 175px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    margin: 1em auto;
+    background-color: #5bbee5;
+    text-indent: 0.1em;
+    letter-spacing: 0.1em;
+    border-radius: 1.5em;
+  }
+  
+  .btn_submit:hover {
+    background-color: #998bfa;
+  }
