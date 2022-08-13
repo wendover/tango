@@ -5,21 +5,21 @@
 <meta name="description" content="東京ミロンガ倶楽部">
 <meta name="viewport" content="width=device-width">
 <title>東京ミロンガ倶楽部</title>
+<link rel="icon" type="image/png" sizes="16x16"  href="static/images/favicon-16x16.png">
 <link rel="stylesheet" href="static/css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script src="static/js/script.js"></script>
 </head>
 
 <body>
-
+<div class="bg_pattern Polka_v2"></div>
 <nav id="mainnav">
-	<p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
 	<div class="panel">
 		<ul>
 			<li><a href="#header">TOP</a></li>
-			<li><a href="#sec01">VISION</a></li>
-			<li><a href="#sec02">SERVICE</a></li>
-			<li><a href="#sec03">PROFILE</a></li>
+			<li><a href="#sec_vision">VISION</a></li>
+			<li><a href="#sec_event">EVENT</a></li>
+			<li><a href="#sec_profile">PROFILE</a></li>
 		</ul>
 	</div>
 </nav>
@@ -32,72 +32,90 @@
 	</div>
 </header>
 
+<div class="content">
+
+
 <!-- VISION -->
-<section id="sec01">
+<section id="sec_vision">
 	<header>
-		<h2>VISION</h2>
+		<header>
+			<h2>VISION</h2>
+		</header>
 	</header>
-	<div class="vision">
+	<div class="col1">
 		私たちは東京でのタンゴ文化の発展を目的とした任意団体であり、不定期にてタンゴのダンスパーティ（以下ミロンガと呼ぶ）を開催しております。
 		<br>
 		また、協力関係にあるインストラクタの方と共にタンゴ文化発展の為、入門者向けのレッスンの開催及び各種イベントを共同開催しております。
+	</div>
+
+	<div class="inner">
+		<ul class="col3">
+			<li>
+				<img src="static/images/dance_001.png" width="288" height="288" alt="">
+			</li>
+			<li>
+				<img src="static/images/party_001.png" width="288" height="288" alt="">
+			</li>
+			<li>
+				<img src="static/images/morgado_001.png" width="288" height="288" alt="">
+			</li>
+		</ul>
 	</div>
 </section>
 <!-- // VISION -->
 
 
-<!-- SERVICE -->
-<section id="sec02">
+<!-- EVENT -->
+<section id="sec_event">
+	<header>
+		<h2>EVENT</h2>
+	</header>
+	<div class="col1">
+		Next event is comming soon...
+	</div>
 	<div class="inner">
+		
 		<ul class="col3">
 			<li>
-				<h2>SERVICE</h2>
-				<img src="static/images/dance_001.png" width="288" height="288" alt="">
-				<p></p>
-			</li>
-			<li>
-				<h2>MESSAGE</h2>
-				<img src="static/images/party_001.png" width="288" height="288" alt="">
-				<p></p>
-			</li>
-			<li>
-				<h2>STORY</h2>
-				<img src="static/images/morgado_001.png" width="288" height="288" alt="">
-				<p></p>
+				<a href="/event"><img src="static/images/aff2_logo.png" alt="AFF2"></a>
 			</li>
 		</ul>
 	</div>
 </section>
-<!-- // SERVICE -->
+<!-- // EVENT -->
 
 <!-- PROFILE -->
-<section id="sec03">
+<section id="sec_profile">
 	<header>
 		<h2>PROFILE</h2>
 	</header>
 	<div class="inner">
 		<ul class="col2">
 			<li>
-				<dl>
-					<dt>団体名</dt>
-					<dd>東京ミロンガ倶楽部</dd>
-					<dt>代表</dt>
-					<dd>岡本　直樹</dd>
-					<dt>電話番号</dt>
-					<dd>080-5039-7892</dd>
-					<dt>メール</dt>
-					<dd>wendover42@gmail.com</dd>
-					<dt>設立</dt>
-					<dd>2022年1月1日</dd>
-					<dt>資本金</dt>
-					<dd>1,000,000円</dd>
-				</dl>
+				<h3>団体名</h3>
+				<dd>東京ミロンガ倶楽部</dd>
 			</li>
+			<li>
+				<h3>代表</h3>
+				<dd>岡本　直樹</dd>
+			</li>
+			<li>
+				<h3>メール</h3>
+				<dd>tokyo.milonga.club@gmail.com</dd>
+			</li>
+			<li>
+				<h3>設立</h3>
+				<dd>2022年1月1日</dd>
+			</li>
+			<li>
+				<h3>資本金</h3>
+				<dd>5,000,000円</dd>
+			</li>
+			
 		</ul>
 	</div>
 </section>
 <!-- // PROFILE -->
-
-
+</div>
 </body>
 </html>

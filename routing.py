@@ -46,18 +46,18 @@ def after_request(response):
 
 
 def error_handler_400(error):
-    logger = logging.getLogger(__name__).error(error)
+    logger = logging.getLogger(__name__)
     logger.error(error)
     return render_template("httpstatus400.html")
 
 
 def error_handler_404(error):
-    logger = logging.getLogger(__name__).error(error)
+    logger = logging.getLogger(__name__)
     logger.error(error)
     return render_template("httpstatus404.html")
 
 
 def error_handler_500(error):
-    logger = logging.getLogger(__name__).error(error)
+    logger = logging.getLogger(__name__)
     logger.error(error)
     return render_template("httpstatus500.html")

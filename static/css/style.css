@@ -2,26 +2,30 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 
-/* reset */
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
-address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;}
-ul{list-style:none;}
-table{border-collapse:collapse;border-spacing:0;}
-caption,th{text-align:left;}
-q:before,q:after{content:'';}
-object,embed{vertical-align:top;}
-legend{display:none;}
-h1,h2,h3,h4,h5,h6{font-size:100%;}
-img,abbr,acronym,fieldset{border:0;}
 
 body{
-	font: 14px/1.9 'Noto Sans JP', Arial, Verdana, 游ゴシック, YuGothic,'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo,sans-serif;
+	
 	font-weight: 300;
 	-webkit-text-size-adjust:100%;
 	overflow-x: hidden;
 	color: #000;
 	background: #fff;
 }
+.bg_pattern {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #ffffff;
+	opacity: 0.4;
+	z-index: -1;
+  }
+  .Polka_v2 {
+	background-image:  radial-gradient(#ffc107 2px, transparent 2px), radial-gradient(#ffc107 2px, #ffffff 2px);
+	background-size: 40px 40px;
+	background-position: 0 0,20px 20px;
+  }
 
 a{
 	color: #0066ff;
@@ -41,19 +45,19 @@ a:active, a:focus,input:active, input:focus{outline:0;}
 	position: relative;
     overflow:hidden;
     width:100%;
-    height:568px;
+    height:400px;
 }
 
 #header img{
     position:absolute;
     left:50%;
     width:1280px;
-    height:568px;
+    height:380px;
     margin-left:-640px;
 }
 
 #slogan{
-	position: absolute;
+  position: absolute;
   top: 50%;
 	width: 100%;
 	-webkit-transform: translate(0, -50%);
@@ -76,14 +80,9 @@ a:active, a:focus,input:active, input:focus{outline:0;}
 }
 
 
+
 /* フッター
 ------------------------------------------------------------*/
-#footer{
-	clear: both;
-	padding: 50px 10px 50px 0;
-	text-align: center;
-	font-size: 12px;
-}
 
 
 /* 共通
@@ -103,50 +102,40 @@ section h2{
 	font-size: 22px;
 	font-weight:normal;
 	text-align: center;
+	font-family: 'Pacifico', cursive;
 }
 
 .inner{
-	width: 94%;
+	width: 85%;
 	margin: 0 auto;
 	padding-bottom: 50px;
 }
 
+.content{
+	width: 90%;
+	background: #fff5ee;
+	margin-left: auto;
+    margin-right: auto;
+	margin-bottom: 50px;
+}
+
+.col1{
+	width: 60%;
+	margin: 0 auto;
+	padding: 20px;
+	padding-bottom: 80px;
+	font-size: 16px;
+	background: #FFFFFF;
+	border-radius: 25px;
+	color: #000000;
+}
+
 .col2 li{
-	display: inline-block;
+	display: block;
 	width: 100%;
   	margin: 20px 0 20px 0;
 }
 
-
-/* SEC01 VISION
-------------------------------------------------------------*/
-
-.vision{
-	width: 60%;
-	margin: 0 auto;
-	padding-bottom: 80px;
-}
-
-
-/* SEC02 MESSAGE
-------------------------------------------------------------*/
-.wrap{
-	clear: both;
-	width: 100%;
-	background: #f6f6f6;
-}
-
-.bg{
-	line-height: 0;
-}
-
-.txt h2{
-	padding: 0 0 20px !important;
-}
-
-
-/* SEC03 SERVICE MESSAGE STORY
-------------------------------------------------------------*/
 .col3 li{
 	margin-bottom: 50px;
 }
@@ -158,27 +147,18 @@ section h2{
 }
 
 
-/* SEC04 STORY & SUCCESS
-------------------------------------------------------------*/
-#sec04{
-	background: url(../images/bgSec04.jpg) no-repeat 100% 100% fixed;
-	background-size: cover;
-	-webkit-background-size: cover;
-	color: #fff;
-}
-
 
 /* SEC05 PROFILE
 ------------------------------------------------------------*/
-#sec05{
+#sec_profile{
 	padding-top: 50px;
 }
 
-#sec05 dl{
+#sec_profile dl{
 	line-height: 1.2;
 }
 
-#sec05 dt{
+#sec_profile dt{
 	clear: left;
 	float: left;
 	display: block;
@@ -189,32 +169,15 @@ section h2{
 	line-height: 1.6em;
 }
 
-#sec05 dd{
-	width: 60%;
-	float: left;
+#sec_profile dd{
 	text-align: left;
-	margin-bottom: 15px;
-	line-height: 1.6em;
+	margin-bottom: 8px;
+	line-height: 1em;
+	font-size:16px;
 }
 
-#sec05 header{
+#sec_profile header{
 	display: none;
-}
-
-#map{
-	position: relative;
-	padding-bottom: 75%;
-	height: 0;
-	overflow: hidden;
-}
-
-#map iframe{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100% !important;
-	height: 100% !important;
-	border: 0;
 }
 
 
@@ -288,10 +251,6 @@ section h2{
 	background: #f6f6f6;
 	}
 
-	#sec02_02 .txt, #sec02_02 .bg{
-		float: right;
-	}
-
 	.vMid{
 		display: table-cell;
 		padding: 0 100px;
@@ -315,7 +274,7 @@ section h2{
 	
 	/* SEC05 PROFILE
 	-----------------*/
-	#sec05{
+	#sec_profile{
 		padding-top: 120px;
 	}
 	
@@ -346,64 +305,6 @@ section h2{
 
 	#slogan h2{
 		font-size: 16px;
-	}
-
-  a#menu{
-  	display: inline-block;
-  	position: relative;
-  	width: 40px;
-  	height: 40px;
-  	margin: 10px;
-	}
-
-	#menuBtn{
-  	display: block;
-  	position: absolute;
-  	top: 50%;
-  	left: 50%;
-  	width: 18px;
-  	height: 2px;
-  	margin: -1px 0 0 -7px;
-  	background: #fff;
-  	transition: .2s;
-	}
-
-	#menuBtn:before, #menuBtn:after{
-  	display: block;
-  	content: "";
-  	position: absolute;
-  	top: 50%;
-  	left: 0;
-  	width: 18px;
-  	height: 2px;
-  	background: #fff;
-  	transition: .3s;
-	}
-
-	#menuBtn:before{
-  	margin-top: -7px;
-	}
-
-	#menuBtn:after{
-  	margin-top: 5px;
-	}
-
-	a#menu .close{
-  	background: transparent;
-	}
-
-	a#menu .close:before, a#menu .close:after{
-  	margin-top: 0;
-	}
-
-	a#menu .close:before{
-  	transform: rotate(-45deg);
-  	-webkit-transform: rotate(-45deg);
-	}
-
-	a#menu .close:after{
-  	transform: rotate(-135deg);
-  	-webkit-transform: rotate(-135deg);
 	}
 
 	.panel{
@@ -457,7 +358,7 @@ section h2{
 	.col3 li{
 		margin: 0 auto;
 		display: block;
-	max-width: 288px;
+		max-width: 288px;
 	}
 }
 
@@ -465,7 +366,7 @@ section h2{
 	section h2{
 		padding: 50px 0 20px 0;
 	}
-	#sec01 h2{
+	#sec_vision h2{
 		padding: 70px 0 20px;
 	}
 	.vMid{
