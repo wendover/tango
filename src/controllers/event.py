@@ -65,13 +65,14 @@ class EventController(MethodView):
                 }
                 query = "INSERT INTO customer (id, val) VALUES(%s, %s);"
                 postgres.execute(query, (email, Json(val)))
+
+                self._send(from_address, email, message)
+
                 ret = "ご予約を受け付けました。<br>" \
                     "入力したメールアドレスに今後の流れが記載されているのでご確認ください。<br>" \
                     "しばらく待ってもメールが届かない場合は、お手数ですが再度手続きをお願いいたします。<br>" \
                     "また、迷惑メール等に振り分けられている可能性もございますので再度ご確認ください。"
-                
 
-        self._send(from_address, email, message)
         p = {"message": ret}
         return render_template("event_result.html", p=p)
 
