@@ -1,10 +1,10 @@
 import logging
 
+from src.controllers.admin import AdminController
 from src.controllers.event import EventController
 from src.controllers.main import MainController
 from src.controllers.qrcode import QRCodeController
 from flask import render_template, request
-from flask.json import jsonify
 from http import HTTPStatus
 
 
@@ -24,6 +24,9 @@ class Routing(object):
         )
         app.add_url_rule(
             "/event_code", view_func=QRCodeController.as_view("qrcode_controller")
+        )
+        app.add_url_rule(
+            "/admin", view_func=AdminController.as_view("admin_controller")
         )
 
         # error

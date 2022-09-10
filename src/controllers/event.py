@@ -6,6 +6,8 @@ from email.mime.text import MIMEText
 from email.utils import formatdate
 from flask.views import MethodView
 from flask import render_template, request
+from psycopg2.extras import Json
+from src.utils.postgres import Postgres
 
 
 MAIL_TITLE = "【予約受付メール】 東京ミロンガ倶楽部"
@@ -31,11 +33,41 @@ class EventController(MethodView):
 
         with open("resources/templates/mail_book.txt", mode="r", encoding="UTF-8") as f:
             body = f.read()
-        body = body.format(name, address, email)
-        print(body)
+        body = body.format(name=name, address=address, phone=phone)
         message = self._create_message(from_address, email, bcc, subject, body)
-        self._send(from_address, email, message)
-        return render_template("httpstatus200.html")
+
+        with Postgres() as postgres:
+            status = None
+            query = "SELECT * FROM customer WHERE id = %s"
+            cur = postgres.select(query, (email, ))
+            for c in cur:
+                record = dict(c)
+                status = record.get("val").get("status")
+                print(status)
+                
+            if status is not None:
+                if status == 0:
+                    ret = "既に予約依頼が行われています。指定の口座に振込を行うか、当日に直接現地でお支払い下さい。"
+                elif status == 1:
+                    ret = "既にお支払いが完了しています。予約番号をお控えの上、現地にお越しください。"
+            else:
+                val = {
+                    "name": name,
+                    "phone": phone,
+                    "email": email,
+                    "status": 0
+                }
+                query = "INSERT INTO customer (id, val) VALUES(%s, %s);"
+                postgres.execute(query, (email, Json(val)))
+                ret = "ご予約を受け付けました。<br>" \
+                    "入力したメールアドレスに今後の流れが記載されているのでご確認ください。<br>" \
+                    "しばらく待ってもメールが届かない場合は、お手数ですが再度手続きをお願いいたします。<br>" \
+                    "また、迷惑メール等に振り分けられている可能性もございますので再度ご確認ください。"
+                
+
+        #self._send(from_address, email, message)
+        p = {"message": ret}
+        return render_template("event_result.html", p=p)
 
     
     def _create_message(self, from_addr: str, to_addr: str, bcc_addrs: list, subject: str, body: str):

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="東京ミロンガ倶楽部">
+<meta name="viewport" content="width=device-width">
+<title>東京ミロンガ倶楽部</title>
+<link rel="stylesheet" href="static/css/form.css">
+</head>
+
+<body>
+    <div class="box_con04">
+        <div class="box_con04">
+            <form method="post" action="event">
+                <ul class="formTable">
+                    <li>
+                        <p class="title"><em>ステータス</em></p>
+                        <div class="box_det">{{ p.message | safe }}</div>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
