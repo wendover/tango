@@ -71,7 +71,7 @@ class EventController(MethodView):
                     "また、迷惑メール等に振り分けられている可能性もございますので再度ご確認ください。"
                 
 
-        #self._send(from_address, email, message)
+        self._send(from_address, email, message)
         p = {"message": ret}
         return render_template("event_result.html", p=p)
 
