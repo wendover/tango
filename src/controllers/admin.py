@@ -62,7 +62,7 @@ class AdminController(MethodView):
                 abort(InternalServerError.code)
 
             val = record.get("val")
-            val["status"] = "1"
+            val["status"] = 1
             query = "UPDATE customer SET val = %s WHERE id = %s"
 
             postgres.execute(query, (Json(val), email))

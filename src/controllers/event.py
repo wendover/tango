@@ -5,15 +5,19 @@ import smtplib
 from email.mime.text import MIMEText
 from email.utils import formatdate
 from flask.views import MethodView
-from flask import render_template, request
+from flask import abort, render_template, request
 from psycopg2.extras import Json
 from src.utils.postgres import Postgres
+from werkzeug.exceptions import InternalServerError
 
 
 MAIL_TITLE = "【予約受付メール】 東京ミロンガ倶楽部"
 
 
 class EventController(MethodView):
+    def __init__(self):
+        self._logger = logging.getLogger()
+
     def get(self):
         return render_template("event.html")
 
@@ -49,6 +53,9 @@ class EventController(MethodView):
                     ret = "既に予約依頼が行われています。指定の口座に振込を行うか、当日に直接現地でお支払い下さい。"
                 elif status == 1:
                     ret = "既にお支払いが完了しています。予約番号をお控えの上、現地にお越しください。"
+                else:
+                    self._logger.error("不明なステータス: %s" % status)
+                    abort(InternalServerError.code)
             else:
                 val = {
                     "name": name,
@@ -64,7 +71,7 @@ class EventController(MethodView):
                     "また、迷惑メール等に振り分けられている可能性もございますので再度ご確認ください。"
                 
 
-        self._send(from_address, email, message)
+        #self._send(from_address, email, message)
         p = {"message": ret}
         return render_template("event_result.html", p=p)
 
