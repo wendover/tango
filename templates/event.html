@@ -14,25 +14,33 @@
         <form method="post" action="event">
             <ul class="formTable">
                 <li>
-                <p class="title"><em>お名前<span>必須</span></em></p>
-                <div class="box_det"><input size="20" type="text" class="wide" name="name" required=True /></div>
+                    <p class="title"><em>お名前<span>必須</span></em></p>
+                    <div class="box_det"><input size="20" type="text" class="wide" name="name" required=True /></div>
                 </li>
                 <li>
-                <p class="title"><em>住所</em></p>
-                <div class="box_det"><input size="30" type="text" class="wide" name="address"/></div>
+                    <p class="title"><em>住所</em></p>
+                    <div class="box_det"><input size="30" type="text" class="wide" name="address"/></div>
                 </li>
                 <li>
-                <p class="title"><em>電話番号</em></p>
-                <div class="box_det"><input size="30" type="tel" class="wide" name="phone"/></div>
+                    <p class="title"><em>電話番号</em></p>
+                    <div class="box_det"><input size="30" type="tel" class="wide" name="phone"/></div>
                 </li>
                 <li>
-                <p class="title"><em>メールアドレス<span>必須</span></em></p>
-                <div class="box_det"><input size="30" type="email" class="wide" name="email" required=True/></div>
+                    <p class="title"><em>メールアドレス<span>必須</span></em></p>
+                    <div class="box_det"><input size="30" type="email" class="wide" name="email" required=True/></div>
                 </li>
                 <li>
+                    <p class="title"><em>受付番号<span>予約済みの方のみ</span></em></p>
+                    <div class="box_det"><input size="30" type="booking_number" class="wide" name="booking_number"/></div>
+                </li>
             </ul>
             <div>
-                <button class="btn_submit" name="btn_submit" type="submit">送信する</button>
+                <button class="btn_submit" name="btn_submit" type="submit">予約／確認</button>
+            </div>
+            <div>
+                <b>上記ボタンは一度だけ押下をお願いします。</b>
+                <br>
+                <b>既に予約済みの方はメールアドレスと約番号を入力していただくことで予約の確認が行えます。</b>
             </div>
         </form>
     </div>
