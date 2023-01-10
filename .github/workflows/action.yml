@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       foo: this is test
-      description: "テスト用パラメータ"
+        description: "テスト用パラメータ"
 
 jobs:
   run_action:
