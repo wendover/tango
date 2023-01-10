@@ -2,9 +2,9 @@ name: Shell Commands
 
 on:
   workflow_dispatch:
-  inputs:
-    foo: this is test
-    description: "テスト用パラメータ"
+    inputs:
+      foo: this is test
+      description: "テスト用パラメータ"
 
 jobs:
   run_action:
