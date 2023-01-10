@@ -3,7 +3,7 @@ name: Shell Commands
 on:
   workflow_dispatch:
     inputs:
-      foo: this is test
+      foo:
         description: "テスト用パラメータ"
 
 jobs:
