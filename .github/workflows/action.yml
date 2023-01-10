@@ -1,13 +1,14 @@
 name: Shell Commands
-workflow_dispatch:
-inputs:
-  foo: this is test
-  description: "テスト用パラメータ"
+
+on:
+  workflow_dispatch:
+  inputs:
+    foo: this is test
+    description: "テスト用パラメータ"
 
 jobs:
-  printInputs:
+  run_action:
     runs-on: ubuntu-latest
-
     steps:
     - run: |
         echo "RUN: ${{ github.event.inputs.foo }}"
