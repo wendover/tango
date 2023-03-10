@@ -1,1 +1,5 @@
-
+on:
+  workflow_dispatch:
+    inputs:
+      foo:
+        description: "テスト用パラメータ"
