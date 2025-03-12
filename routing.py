@@ -20,9 +20,6 @@ class Routing(object):
             view_func=MainController.as_view("main_controller"),
         )
         app.add_url_rule(
-            "/event", view_func=EventController.as_view("event_controller")
-        )
-        app.add_url_rule(
             "/event_code", view_func=QRCodeController.as_view("qrcode_controller")
         )
         app.add_url_rule(

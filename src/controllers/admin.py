@@ -79,6 +79,7 @@ class AdminController(MethodView):
             db_phone = self._get_if_exists(val, "phone", required=False)
             db_email = self._get_if_exists(val, "email")
             db_booking_number = self._get_if_exists(val, "booking_number")
+            number_of_people = self._get_if_exists(val, "number_of_people")
             create_date = self._get_if_exists(val, "create_date")
             if create_date:
                 create_date = datetime.fromtimestamp(create_date, tz=JST)
@@ -97,7 +98,9 @@ class AdminController(MethodView):
             address=db_address,
             phone=db_phone,
             booking_number=db_booking_number,
-            booking_time=create_date
+            booking_time=create_date,
+            number_of_people=number_of_people,
+            amount=int(number_of_people) * 7500
         )
         
         message = self._create_message(from_address, db_email, cc, MAIL_TITLE_COMPLETE, body)

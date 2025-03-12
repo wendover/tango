@@ -21,12 +21,14 @@ MAIL_TITLE = "Milonga The World：【予約受付メール】 東京ミロンガ
 class EventController(MethodView):
     def __init__(self):
         self._logger = logging.getLogger()
+        super().__init__()
 
     def get(self):
         return render_template("event.html")
 
     def post(self):
         name = request.form["name"]
+        number_of_people = request.form["number_of_people"]
         address = request.form["address"]
         if not address:
             address = "未入力"
@@ -82,6 +84,7 @@ class EventController(MethodView):
                     body = f.read()
                 body = body.format(
                     name=name,
+                    number_of_people=number_of_people,
                     address=address,
                     phone=phone,
                     booking_number=booking_number,
